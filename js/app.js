@@ -36,7 +36,7 @@ newGameBtn.addEventListener("click", (event) => {
 var win = 0;
 var draw = 0;
 var lose = 0;
-var round = 1;
+var round = 0;
 var rock = 0;
 var scissors = 0;
 var paper = 0;
@@ -45,12 +45,12 @@ const launchNewGame = () => {
 	win = 0;
 	draw = 0;
 	lose = 0;
-	round = 1;
+	round = 0;
 	rock = 0;
 	scissors = 0;
 	paper = 0;
 
-	roundEl.innerHTML = "Round #" + round;
+	roundEl.innerHTML = "Round #" + (round + 1);
 	versus.innerHTML = "";
 	result.innerHTML = "";
 
@@ -73,7 +73,7 @@ const percentage = (partialValue, totalValue) => {
 const chifoumi = (playerChoice) => {
 	const computerChoice = getRandomInt(3);
 	round++;
-	roundEl.innerHTML = "Round #" + round;
+	roundEl.innerHTML = "Round #" + (round + 1);
 
 	if (playerChoice === 0) {
 		var playerChoiceName = "<i class='far fa-hand-rock'></i> Pierre";
